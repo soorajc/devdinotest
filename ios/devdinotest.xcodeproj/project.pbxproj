@@ -13,6 +13,9 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		186E1AFBB85404D4E8CB6B9A /* libPods-devdinotest-devdinotestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6E86F4451F3FADD1814C36C /* libPods-devdinotest-devdinotestTests.a */; };
+		7174380E2648FE4000F9444A /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7174380B2648FE3F00F9444A /* Montserrat-Black.ttf */; };
+		7174380F2648FE4000F9444A /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7174380C2648FE4000F9444A /* Montserrat-Bold.ttf */; };
+		717438102648FE4000F9444A /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7174380D2648FE4000F9444A /* Montserrat-Regular.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +48,9 @@
 		51C183F149411EC27AD1447D /* libPods-devdinotest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-devdinotest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C93521F4C5445B5995CF340 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		64437BD1BB674855A8493792 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		7174380B2648FE3F00F9444A /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		7174380C2648FE4000F9444A /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		7174380D2648FE4000F9444A /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		74B12F52AA4A436A8D16A499 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		8180CBB7A8304DE7A5E1434F /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = devdinotest/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -132,6 +138,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				7174380B2648FE3F00F9444A /* Montserrat-Black.ttf */,
+				7174380C2648FE4000F9444A /* Montserrat-Bold.ttf */,
+				7174380D2648FE4000F9444A /* Montserrat-Regular.ttf */,
 				13B07FAE1A68108700A75B9A /* devdinotest */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* devdinotestTests */,
@@ -282,8 +291,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7174380F2648FE4000F9444A /* Montserrat-Bold.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				717438102648FE4000F9444A /* Montserrat-Regular.ttf in Resources */,
+				7174380E2648FE4000F9444A /* Montserrat-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
