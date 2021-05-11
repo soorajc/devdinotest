@@ -14,7 +14,8 @@ import Styles from './styles';
 
 const TextInputField = props => {
   const handleTextChange = input => {
-    props.handleTextInput(input);
+    const label = props.label ? props.label : 'nil';
+    props.handleTextInput(input, label);
   };
   return (
     <View style={Styles.container}>
@@ -31,6 +32,7 @@ const TextInputField = props => {
 export default TextInputField;
 
 TextInputField.propTypes = {
+  label: PropTypes.string,
   placeholder: PropTypes.string.isRequired,
   handleTextInput: PropTypes.func.isRequired,
 };

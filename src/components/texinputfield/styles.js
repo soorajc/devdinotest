@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
   container: {
     height: height * 0.1,
     width: width * 0.8,
-    marginTop: '2%',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
