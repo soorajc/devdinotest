@@ -1,5 +1,5 @@
 import {Alert} from 'react-native';
-import {getData, setData} from '../utils';
+import {getData, setData, removeData} from '../utils';
 
 export const createUserAccount = async userName => {
   let newUserList = [];
@@ -58,12 +58,81 @@ export const setAlertContent = status => {
       content.message = 'Username already taken. Try another one';
       break;
     case 'Invalid User':
-      content.title = 'Error';
-      content.message = 'Username does not exist.';
+      content.title = 'Message';
+      content.message =
+        'Username does not exist. Username is case-sensitive please check your username';
       break;
     default:
       content.title = '';
       content.message = '';
   }
   return content;
+};
+
+export const getPosts = async type => {
+  const posts = await getData(type);
+  if (posts && posts.length > 0) {
+    return posts;
+  } else {
+    return [];
+  }
+};
+
+export const setPost = async (type, data) => {
+  const status = await setData(type, data);
+  return status;
+};
+
+export const getCurrentUser = async () => {
+  const currentUser = await getData('CURRENT_USER');
+  return currentUser;
+};
+
+export const setCurrentUser = async userName => {
+  const status = await setData('CURRENT_USER', userName);
+  return status;
+};
+
+export const removeCurrentUser = async userName => {
+  const status = await removeData('CURRENT_USER');
+  return status;
+};
+
+export const publishComment = async (type, postId, comment) => {
+  let newComments = [];
+  let currentPostList = await getData(type);
+
+  if (currentPostList && currentPostList.length > 0) {
+    const checkExistingPostIndex = currentPostList.findIndex(
+      item => item.id === postId,
+    );
+    if (checkExistingPostIndex > -1) {
+      newComments = currentPostList[checkExistingPostIndex]['comments'];
+      newComments.push(comment);
+      currentPostList['comments'] = newComments;
+      const saveData = await setData(type, currentPostList);
+      return {status: 'Success', data: saveData};
+    } else {
+      return {status: 'Error', data: 'no data found'};
+    }
+  } else {
+    return {status: 'Error', data: 'no data found'};
+  }
+};
+
+export const loadComments = async (type, postId) => {
+  let currentPostList = await getData(type);
+  if (currentPostList && currentPostList.length > 0) {
+    const checkExistingPostIndex = currentPostList.findIndex(
+      item => item.id === postId,
+    );
+    if (checkExistingPostIndex > -1) {
+      const comments = currentPostList[checkExistingPostIndex]['comments'];
+      return {status: 'Success', data: comments};
+    } else {
+      return {status: 'Error', data: []};
+    }
+  } else {
+    return {status: 'Not Found', data: []};
+  }
 };

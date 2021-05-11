@@ -20,3 +20,13 @@ export const setData = async (keyName, data) => {
     return {status: 'Error'};
   }
 };
+
+export const removeData = async keyName => {
+  try {
+    await AsyncStorage.removeItem(keyName);
+    return {status: 'Success'};
+  } catch (error) {
+    console.log('Error while removing data');
+    return {status: 'Error'};
+  }
+};
