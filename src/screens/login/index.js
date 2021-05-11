@@ -9,11 +9,13 @@
 import React, {useState} from 'react';
 import {SafeAreaView, View, Text, Dimensions} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import {StackActions} from '@react-navigation/native';
 
 import {
   checkUserCredentials,
   displayAlert,
   setAlertContent,
+  setCurrentUser,
 } from '../../helper';
 import TextInputField from '../../components/texinputfield';
 import Button from '../../components/button';
@@ -35,13 +37,17 @@ const Login = ({navigation}) => {
       const loginResult = await checkUserCredentials(userName);
       if (loginResult && loginResult.status) {
         if (loginResult.status === 'Success') {
-          console.log('Login success');
+          await setCurrentUser(userName);
+          navigation.dispatch(StackActions.replace('Home'));
           return;
         } else {
           const alertContent = setAlertContent(loginResult.status);
           title = alertContent.title;
           message = alertContent.message;
         }
+      } else {
+        title = 'Error';
+        message = 'No data available. Create a user first';
       }
     } else {
       title = 'Validation Error';
@@ -57,7 +63,7 @@ const Login = ({navigation}) => {
         <Icon name="user-friends" size={width * 0.2} color="#DDBEC5" />
         <Text style={Styles.title}>Welcome To Forums App</Text>
         <TextInputField
-          placeholder="Enter your username here"
+          placeholder="Enter username ( case-sensitive )"
           handleTextInput={setUserName}
         />
         <Button

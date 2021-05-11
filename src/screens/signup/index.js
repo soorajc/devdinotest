@@ -30,8 +30,7 @@ const SignUp = ({navigation}) => {
         title = alertContent.title;
         message = alertContent.message;
         if (createAccountResult.status === 'Success') {
-          navigation.navigate('Login');
-          return;
+          navigation.goBack();
         }
       }
     } else {
