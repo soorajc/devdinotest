@@ -20,6 +20,7 @@ import {
 import TextInputField from '../../components/texinputfield';
 import Button from '../../components/button';
 import Styles from './styles';
+import appConfig from '../../config';
 
 const {width} = Dimensions.get('window');
 
@@ -58,23 +59,24 @@ const Login = ({navigation}) => {
   };
 
   return (
-    <SafeAreaView style={Styles.container}>
+    <SafeAreaView
+      style={[Styles.container, {backgroundColor: appConfig.backgroundColor}]}>
       <View style={Styles.formContainer}>
         <Icon name="user-friends" size={width * 0.2} color="#DDBEC5" />
-        <Text style={Styles.title}>Welcome To Forums App</Text>
+        <Text style={Styles.title}>{appConfig.title}</Text>
         <TextInputField
           placeholder="Enter username ( case-sensitive )"
           handleTextInput={setUserName}
         />
         <Button
-          label="Login"
+          label={appConfig.loginButtonLabel}
           handlePress={handleLogin}
-          backgroundColor="#E7476C"
+          backgroundColor={appConfig.loginButtonColor}
         />
         <Button
-          label="Sign Up"
+          label={appConfig.signUpButtonLabel}
           handlePress={handleSignUp}
-          backgroundColor="#758DE7"
+          backgroundColor={appConfig.signUpButtonColor}
         />
       </View>
     </SafeAreaView>
