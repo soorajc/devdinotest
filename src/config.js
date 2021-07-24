@@ -1,5 +1,5 @@
 const appConfig = {
-  title: 'Welcome To Student App',
+  title: 'Welcome To Tutor App',
   backgroundColor: 'white',
   loginButtonColor: 'red',
   loginButtonLabel: 'Student Login',
